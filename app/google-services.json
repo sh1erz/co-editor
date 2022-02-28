@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "667775169381",
+    "project_id": "coedit-9956f",
+    "storage_bucket": "coedit-9956f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667775169381:android:106e0ec3a1e25eb442678c",
+        "android_client_info": {
+          "package_name": "com.example.coedit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667775169381-vqbp6skrfpm09gf77c22ttprs5j2go7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6mQea9FovLtoATrA1Uhb2G1F_Urgo6tE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667775169381-vqbp6skrfpm09gf77c22ttprs5j2go7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
