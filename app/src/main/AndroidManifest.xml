@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoEdit">
         <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.note.NoteActivity"
             android:exported="false" />
         <activity

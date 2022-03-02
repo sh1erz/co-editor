@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.coedit.R
 import com.example.coedit.databinding.ActivityLoginBinding
+import com.example.coedit.ui.main.MainActivity
 import com.example.coedit.ui.note.NoteActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -23,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        startActivity(Intent(this, NoteActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
 
         /*
          val username = binding.username
