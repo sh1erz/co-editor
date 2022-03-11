@@ -7,7 +7,7 @@ import com.example.coedit.data.model.Note
 import com.example.coedit.databinding.ItemTabBinding
 import com.example.coedit.ui.note.NoteAdapter
 
-class TabAdapter(val folders: List<String>, val notesProvider: NotesProvider) :
+class TabAdapter(val folders: List<String>, val notesProvider: NotesProvider, val onNoteListener: NoteAdapter.OnNoteListener) :
     RecyclerView.Adapter<TabAdapter.TabViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TabViewHolder {
@@ -16,7 +16,8 @@ class TabAdapter(val folders: List<String>, val notesProvider: NotesProvider) :
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
+            onNoteListener
         )
     }
 
@@ -27,11 +28,11 @@ class TabAdapter(val folders: List<String>, val notesProvider: NotesProvider) :
 
     override fun getItemCount(): Int = folders.size
 
-    class TabViewHolder(private val binding: ItemTabBinding) :
+    class TabViewHolder(private val binding: ItemTabBinding, private val onNoteListener: NoteAdapter.OnNoteListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(notes: List<Note>) {
             //for each tab new recycler -> adapter is new too
-            binding.noteRecycler.adapter = NoteAdapter(notes)
+            binding.noteRecycler.adapter = NoteAdapter(notes, onNoteListener)
         }
     }
 }

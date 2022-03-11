@@ -7,14 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.coedit.data.model.Note
 import com.example.coedit.databinding.ItemNoteBinding
 
-class NoteAdapter(val notes: List<Note>) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+class NoteAdapter(val notes: List<Note>, private val onNoteListener: OnNoteListener) :
+    RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         return NoteViewHolder(
             ItemNoteBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
+            onNoteListener
         )
     }
 
@@ -24,7 +26,8 @@ class NoteAdapter(val notes: List<Note>) : RecyclerView.Adapter<NoteAdapter.Note
 
     override fun getItemCount(): Int = notes.size
 
-    class NoteViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
+    class NoteViewHolder(val binding: ItemNoteBinding, private val onNoteListener: OnNoteListener) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(note: Note) {
             with(binding) {
@@ -34,7 +37,12 @@ class NoteAdapter(val notes: List<Note>) : RecyclerView.Adapter<NoteAdapter.Note
                 if (!note.members.isNullOrEmpty()) {
                     imgGroup.visibility = View.VISIBLE
                 }
+                root.setOnClickListener { onNoteListener.onNoteClick(note.id) }
             }
         }
+    }
+
+    interface OnNoteListener {
+        fun onNoteClick(noteId: Int)
     }
 }

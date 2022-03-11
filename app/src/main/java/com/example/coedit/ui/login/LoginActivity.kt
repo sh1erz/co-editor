@@ -5,15 +5,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.coedit.R
+import com.example.coedit.data.model.Note
+import com.example.coedit.data.model.User
 import com.example.coedit.databinding.ActivityLoginBinding
 import com.example.coedit.ui.main.MainActivity
-import com.example.coedit.ui.note.NoteActivity
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
