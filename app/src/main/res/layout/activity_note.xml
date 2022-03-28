@@ -15,8 +15,6 @@
         android:layout_height="match_parent"
         tools:context=".ui.note.NoteActivity">
 
-
-
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
@@ -76,22 +74,61 @@
             app:layout_constraintTop_toBottomOf="@+id/folder_spinner"
             tools:ignore="LabelFor" />
 
-        <com.example.coedit.ui.note.LinedEditText
+        <com.example.coedit.ui.widgets.LinedEditText
             android:id="@+id/text_et"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
+            android:paddingHorizontal="8dp"
             android:background="@null"
             android:gravity="top"
             android:importantForAutofill="no"
             android:inputType="textMultiLine|textCapSentences"
             android:text='@{lines}'
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_et"
+            app:layout_constraintBottom_toTopOf="@id/edit_hscrollmenu"
             tools:ignore="LabelFor"
             tools:text="f\nsecond" />
 
+        <!--<androidx.appcompat.widget.Toolbar
+            android:id="@+id/actions_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/edit_actions_menu"
+            tools:visibility="visible" />-->
+
+        <com.example.coedit.ui.widgets.hscrollmenu.HorizontalScrollMenuView
+            android:id="@+id/edit_hscrollmenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <!--  <com.darwindeveloper.horizontalscrollmenulibrary.custom_views.HorizontalScrollMenuView
+              android:id="@+id/edit_actions_scrollview"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:visibility="gone"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:menu="@menu/edit_actions_menu"
+              tools:visibility="visible">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:orientation="horizontal" >
+                  <ImageView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+              </LinearLayout>
+          </com.darwindeveloper.horizontalscrollmenulibrary.custom_views.HorizontalScrollMenuView>
+  -->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

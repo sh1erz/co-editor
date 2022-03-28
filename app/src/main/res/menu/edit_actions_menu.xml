@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_open_text_styles"
+        android:icon="@drawable/ic_action_text_style"
+        android:title="@string/text_styles"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_checkbox"
+        android:icon="@drawable/ic_baseline_check_box_24"
+        android:title="@string/checkbox"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_add_image"
+        android:icon="@drawable/ic_baseline_check_box_24"
+        android:title="@string/add_image"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_open_theme_menu"
+        android:icon="@drawable/ic_baseline_theme_24"
+        android:title="@string/choose_theme"
+        app:showAsAction="ifRoom"/>
+
+</menu>

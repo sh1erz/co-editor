@@ -1,4 +1,4 @@
-package com.example.coedit.ui.note
+package com.example.coedit.ui.widgets
 
 import android.content.Context
 import android.graphics.Canvas
